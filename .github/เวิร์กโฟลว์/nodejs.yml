@@ -1,0 +1,28 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install, build, and test
+      run: |3 2s2 2p6 3s2 3p6 4s1 3d10 7 (1s2 2s2 2p6 3s2 3p2 8 (1s2 2 วินาที 6 3 วินาที 2 3 2 5 วินาที 2 วินาที) 2s2 2p6 4 วินาที 10 วินาที 6 วินาที 2p6 12 (1s2 2s1 13 (1s2 2s2 2p5 14) (1s2 2s2 2p4 15 (1s2 2s2 2p2 3p2 3s2 3p6 4s2 3d104p6 5s2 4d10 5p6 6s1 4f14 6 วินาที 1) .
+
+
+        npm ci
+        npm run build --if-present
+        npm test
+      env:
+        CI: true
